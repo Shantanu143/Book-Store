@@ -1,11 +1,17 @@
-const express = require("express");
 const mongoose = require("mongoose");
 
-const connection_url = "mongodb+srv://user:user123@cluster0.ubb60cs.mongodb.net/?retryWrites=true&w=majority"
+const connection_url = process.env.CONNECTION_STRING;
 
 
-mongoose.connect(connection_url).then(() => {
-  console.log("database connection successful");
-}).catch((err) => {
-  console.log('database connection error', err);
-})
+const connectDb = async () => {
+
+  try {
+    const connect = await mongoose.connect(connection_url);
+    console.log("database is connected")
+  } catch (error) {
+    console.log(error);
+    process.exit(1);
+  }
+}
+
+module.exports = connectDb;
