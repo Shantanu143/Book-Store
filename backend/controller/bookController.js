@@ -1,5 +1,5 @@
 const asyncHandler = require("express-async-handler");
-const Books = require("../dbSchema/bookModel.js")
+const Books = require("../model/bookModel.js")
 
 //@desc POST book
 //route /upload-book
@@ -30,8 +30,13 @@ const uploadBook = asyncHandler(async (req, res) => {
 
 const getAllBooks = asyncHandler(async (req, res) => {
   console.log(req.body);
+  let query = {};
+  if (req.query?.category) {
+    query = { category: req.query.category }
+  }
 
-  const book = await Books.find();
+
+  const book = await Books.find(query);
 
   if (!book) {
     res.status(404);
@@ -66,7 +71,26 @@ const updateBook = asyncHandler(async (req, res) => {
   res.send(updatedBook);
 
 })
+//@dece deleteBook
+//@route /delete-book/:id
+//@access public 
+
+const deleteBook = asyncHandler(async (req, res) => {
+  console.log(req.body);
+
+  const book = await Books.findById(req.params.id);
+
+  if (!book) {
+    res.status(404);
+    throw new Error("Book not found");
+  }
+
+  await book.deleteOne();
+  res.status(200).json(book);
+
+
+})
 
 
 
-module.exports = { uploadBook, getAllBooks, updateBook };
+module.exports = { uploadBook, getAllBooks, updateBook, deleteBook };
