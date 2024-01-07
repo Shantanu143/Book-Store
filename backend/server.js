@@ -14,7 +14,7 @@ connectDb();
 app.use(cors());
 app.use(express.json());
 
-app.use("/upload-book", require("./routes/bookRoutes.js"))
+app.use("/", require("./routes/bookRoutes.js"))
 
 app.listen(PORT, () => {
   console.log(`Server is running on ${PORT}`)
