@@ -1,3 +1,11 @@
 header , nav {
   z-index: 100001 !important ; 
 }
+
+
+@media (min-width: 1024px){
+
+.width__form {
+    width: 1024px !important;
+}
+}

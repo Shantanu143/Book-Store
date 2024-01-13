@@ -1,6 +1,7 @@
 
 //port React from 'react'
 
+import FooterComponent from './footerComponent/FooterComponent'
 import { Outlet } from "react-router-dom"
 import Navbar from "./container/Navbar"
 import './App.css';
@@ -10,6 +11,8 @@ const App = () => {
 
       <Navbar />
       <Outlet />
+
+      <FooterComponent />
     </div>
   )
 }
