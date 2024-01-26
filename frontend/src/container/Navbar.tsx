@@ -1,13 +1,19 @@
-import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom';
+import React, { useContext, useEffect, useState } from 'react'
+import { Link, useActionData } from 'react-router-dom';
+
+import { AuthContext } from '../contects/AuthProvider.jsx'
 
 //react icons 
 import { FaBlog, FaBarsStaggered, FaXmark } from 'react-icons/fa6'
+
 
 const Navbar = () => {
 
   const [menuToggle, setMenuToggle] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
+
+  const { user } = useContext(AuthContext);
+
 
   const toggle = () => {
     setMenuToggle(!menuToggle);
@@ -61,7 +67,6 @@ const Navbar = () => {
             })}
           </ul>
           <div className='space-x-12 hidden lg:flex item-center'>
-
             <button > <FaBarsStaggered className='w-5 hover:text-blue-700' /></button>
           </div>
 
