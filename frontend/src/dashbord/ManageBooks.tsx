@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Table } from 'flowbite-react';
 import { Link } from 'react-router-dom';
 const api = 'http://localhost:5000/api/book';
@@ -15,7 +15,7 @@ const ManageBooks = () => {
 
     fetch(api + `/${id}`, {
       method: "DELETE",
-    }).then(res => res.json()).then(data => {
+    }).then(res => res.json()).then(() => {
       alert("Book Deleted Succefully");
     });
 

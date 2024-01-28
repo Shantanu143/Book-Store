@@ -1,4 +1,3 @@
-import React, { useRef, useState } from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -45,7 +44,7 @@ const BookCard = ({ headline, books }: { headline: any, books: any }) => {
           className="mySwiper"
         >
           {books.map((book: any) => {
-            const { _id, authorName, bookTitle, imageURL, bookDescription, bookPDFURL } = book;
+            const { _id, authorName, bookTitle, imageURL } = book;
             return (
 
 

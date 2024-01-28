@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { useLoaderData, useParams } from 'react-router-dom'
 
 const api = 'http://localhost:5000/api/book';
@@ -64,7 +64,8 @@ const EditBooks = () => {
         "Content-type": "application/json",
       },
       body: JSON.stringify(bookobj)
-    }).then(res => res.json()).then(data => {
+    }).then(res => res.json()).then(() => {
+
       alert("Book Updated Succefully.........")
 
     })

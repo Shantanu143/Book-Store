@@ -2,7 +2,7 @@
 import React, { useContext } from 'react';
 import { Sidebar } from 'flowbite-react';
 import { BiBuoy } from 'react-icons/bi';
-import { HiChartPie, HiInbox, HiLogin, HiLogout, HiShoppingBag, HiTable, HiUser, HiViewBoards } from 'react-icons/hi';
+import { HiChartPie, HiInbox, HiLogin, HiLogout, HiShoppingBag, HiUser, HiViewBoards } from 'react-icons/hi';
 import { AuthContext } from '../contects/AuthProvider';
 
 import { BsFillCloudUploadFill } from 'react-icons/bs';

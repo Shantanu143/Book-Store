@@ -1,4 +1,3 @@
-import React from 'react'
 import BannerCard from '../bannerCard/BannerCard'
 
 const Banner = () => {

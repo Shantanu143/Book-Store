@@ -1,4 +1,3 @@
-import React from 'react'
 import Banner from '../container/Banner'
 import BestSellBook from '../bestSellBook/BestSellBook'
 import FevBook from '../fevBook/FevBook'

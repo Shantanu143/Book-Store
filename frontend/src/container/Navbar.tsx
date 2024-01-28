@@ -1,7 +1,7 @@
-import React, { useContext, useEffect, useState } from 'react'
-import { Link, useActionData } from 'react-router-dom';
+import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom';
 
-import { AuthContext } from '../contects/AuthProvider.jsx'
+//import { AuthContext } from '../contects/AuthProvider.jsx'
 
 //react icons 
 import { FaBlog, FaBarsStaggered, FaXmark } from 'react-icons/fa6'
@@ -12,7 +12,7 @@ const Navbar = () => {
   const [menuToggle, setMenuToggle] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
 
-  const { user } = useContext(AuthContext);
+  //  const { user } = useContext(AuthContext);
 
 
   const toggle = () => {
