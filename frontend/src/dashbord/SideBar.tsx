@@ -1,16 +1,16 @@
-
-import React, { useContext } from 'react';
+import  { useContext } from 'react';
 import { Sidebar } from 'flowbite-react';
 import { BiBuoy } from 'react-icons/bi';
 import { HiChartPie, HiInbox, HiLogin, HiLogout, HiShoppingBag, HiUser, HiViewBoards } from 'react-icons/hi';
-import { AuthContext } from '../contects/AuthProvider';
-
+import { AuthContext } from '../contects/AuthProvider'; // Corrected import path
 import { BsFillCloudUploadFill } from 'react-icons/bs';
+import { User } from 'firebase/auth';
 
 const SideBar: React.FC = () => {
-  const { user }: { user: any } = useContext(AuthContext);
+  const { user }: { user: User | null } = useContext(AuthContext); // Updated user type
   const userPhotoURL = user?.photoURL || "https://imgs.search.brave.com/ABvCuXW60bLKFfqME2YfmQHfEJA5_WMjlZzNE_wKYaM/rs:fit:500:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJzLmNvbS9p/bWFnZXMvaGQvZG9y/YWVtb24tcGljdHVy/ZXMtdmN2MThnYjBm/NXQweWxiaS5qcGc";
   const userDisplayName = user?.displayName || "Demo User";
+
   return (
     <div>
       <Sidebar aria-label="Sidebar with content separator example">

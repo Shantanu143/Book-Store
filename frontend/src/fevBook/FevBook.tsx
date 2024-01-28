@@ -1,4 +1,3 @@
-import React from 'react'
 import fevImg from '../assets/favoritebook.jpg'
 import { Link } from 'react-router-dom'
 const FevBook = () => {

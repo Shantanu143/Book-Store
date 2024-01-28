@@ -4,7 +4,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 
 const Logout = () => {
 
-  const { logout } = useContext(AuthContext);
+  const { logout } : any = useContext(AuthContext);
   const location = useLocation();
 
   const from = location.state?.from?.pathname || "/";
@@ -16,7 +16,7 @@ const Logout = () => {
       navigate(from, {
         replace: true
       })
-    }).catch((error) => {
+    }).catch((error:any) => {
       console.log(error)
     })
 
